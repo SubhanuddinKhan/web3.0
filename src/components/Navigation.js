@@ -13,6 +13,9 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
+
+
 
 const drawerWidth = 240;
 const navItems = ["Home", "About", "Contact"];
@@ -20,6 +23,7 @@ const navItems = ["Home", "About", "Contact"];
 function Navigation(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [menuColor,setMenuColor] = React.useState("white");
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -78,8 +82,9 @@ function Navigation(props) {
             {navItems.map((item) => (
               <Button
                 key={item}
-                sx={{ color: "#fff", pr: 5 }}
+                sx={{ color: menuColor, pr: 5 }}
                 style={{ fontSize: 20, fontWeight: "600" }}
+                onClick={()=>setMenuColor("#13a8ff")}
               >
                 {item}
               </Button>

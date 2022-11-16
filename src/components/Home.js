@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
-// import createSimpleSwitcher from './ChartHome'
+import ChartHome from './ChartHome'
 import History from './History';
 
 import Grid from "@mui/material/Grid";
@@ -354,8 +354,8 @@ export default function Home() {
             sx={{ mb: 3 }}
             style={{ backgroundColor: "#12122c", color: darkFontColor }}
           >
-              {/* <CreateSimpleSwitcher /> */}
-              <img src={graph} style={{ maxWidth: "100%" }} />
+              <ChartHome  />
+              {/* <img src={graph} style={{ maxWidth: "100%" }} /> */}
           </Item>
 
           <History />
