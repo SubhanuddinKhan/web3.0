@@ -5,6 +5,8 @@ import { useState } from 'react';
 import Header from './components/Header';
 import Home from './components/Home';
 // import createSimpleSwitcher from './components/ChartHome'
+import Footer from './components/Footer';
+import CLiquidity from './components/CLiquidity';
 
 
 
@@ -14,11 +16,12 @@ function App() {
   return (
   
         <div className='Dark__Theme'>
-      <Header />
-      <Home />
-     {/* <Test /> */}
-    
     {/* <createSimpleSwitcher /> */}
+      <Header />
+      {/* <Home /> */}
+      <CLiquidity />
+     {/* <Test /> */}
+    <Footer />
     <h2>sdkfjslk</h2>
     </div>
   );

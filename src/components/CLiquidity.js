@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
@@ -76,7 +77,7 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
 
 //   drop down style close
 
-export default function Home() {
+export default function CLiquidity() {
   const [darkFontColor, setDarkFontColor] = useState("#FFFFFF");
   const [darkFontColorSec, setDarkFontColorSec] = useState("#13a8ff");
 
@@ -98,7 +99,7 @@ export default function Home() {
         border={0}
         columnSpacing={{ xs: 0, sm: 0, md: 0, lg: 2 }}
       >
-        <Grid item xs={12} sm={12} md={6} lg={4}>
+        <Grid item xs={12} sm={12} md={6} lg={8} >
           <Item
             elevation={1}
             style={{ backgroundColor: "transparent", color: darkFontColor }}
@@ -113,21 +114,38 @@ export default function Home() {
                     "linear-gradient(to right bottom, #13a8ff, #0074f0)",
                 }}
               >
-                ON-CHAIN
+                ADD LIQUIDTY 
               </Button>
               <Button
                 size="large"
-                color="primary"
-                variant="outlined"
+              
+                variant="contained"
                 sx={{
                   width: 200,
                   padding: 2,
                   fontWeight: "bold",
-                  border: 2,
-                  color: darkFontColorSec,
+                  
+                  backgroundColor:
+                  "#12122c"
                 }}
               >
-                CROSS-CHAIN
+                REMOVE LIQUIDTY
+              </Button>
+
+              <Button
+                size="large"
+              
+                variant="contained"
+                sx={{
+                  width: 200,
+                  padding: 2,
+                  fontWeight: "bold",
+                
+                  backgroundColor:
+                  "#12122c"
+                }}
+              >
+                POOL FACTORY
               </Button>
             </Stack>
           </Item>
@@ -144,7 +162,7 @@ export default function Home() {
               gutterBottom
               style={{ textAlign: "left" }}
             >
-              Trade On-Chain
+              Create Pool
             </Typography>
 
             {/* Drop down Start  */}
@@ -154,7 +172,7 @@ export default function Home() {
                 id="demo-customized-select-label"
                 style={{ fontWeight: "bold", color: "white" }}
               >
-                From
+               
               </InputLabel>
 
               <Select
@@ -168,7 +186,7 @@ export default function Home() {
 
                 <MenuItem value={0}>
                   {" "}
-                  <CurrencyBitcoin sx={{ color: "#fc8416", marginBottom: "-5px"  }} />{" "}
+                  <CurrencyBitcoin sx={{ color: "#fc8416", marginBottom: "-5px" }} />{" "}
                   <span style={{ color: "#FFFFFF", display: "inline" }}>
                     BTC
                   </span>{" "}
@@ -191,21 +209,17 @@ export default function Home() {
                 style={{ color: "#FFFFFF" }}
               />
               <span style={{ textAlign: "end", color: "white" }}>
-                25% 50% 75% 100%
+               
               </span>
             </FormControl>
             {/* </FormControl> */}
 
             {/* Drop down close */}
 
-            <div>
-              <ArrowCircleDownRounded
-                sx={{ color: "white", fontSize: "32px" }}
-              />
-            </div>
+          
           </Item>
 
-          <Item sx={{ pl: 3, mt: -3 }} style={{ backgroundColor: "#12122c" }}>
+          <Item sx={{ pl: 3, mt: -5 }} style={{ backgroundColor: "#12122c" }}>
             {/* Drop down Start  */}
 
             <FormControl
@@ -217,7 +231,7 @@ export default function Home() {
                 id="demo-customized-select-label"
                 style={{ fontWeight: "bold", color: "white" }}
               >
-                To
+                
               </InputLabel>
 
               <Select
@@ -244,20 +258,11 @@ export default function Home() {
               <span style={{ textAlign: "end", color: "white" }}>
                 Balance Connect wallet
               </span>
-              <span style={{ textAlign: "left", color: "white" }}>
-                <InfoOutlinedIcon
-                  style={{
-                    fontSize: "18px",
-                    paddingTop: "3px",
-                    marginBottom: "-3px",
-                  }}
-                />{" "}
-                1 BTC = 20 USDC
-              </span>
+            
             </FormControl>
 
             <FormControl sx={{ m: 1, ml: -1 }} variant="standard">
-              <InputLabel htmlFor="demo-customized-textbox"></InputLabel>
+              <InputLabel htmlFor="demo-customized-textbox" ></InputLabel>
               <BootstrapInput
                 id="demo-customized-textbox"
                 type="text"
@@ -271,68 +276,40 @@ export default function Home() {
             {/* Drop down close */}
           </Item>
 
-          <Item
-            sx={{ pl: 3, textAlign: "left" }}
-            style={{ backgroundColor: "#12122c" }}
-          >
-            <span style={{ textAlign: "start", color: "white" }}>
-              Max Slippage:
-            </span>
-
-            <div style={{ float: "right", display: "inline" }}>
-              <span style={{ textAlign: "right", color: "white" }}>
-                0.1 0.25 0.5 custom
-              </span>
-            </div>
-          </Item>
+ 
 
           <Item
             sx={{ pl: 3, textAlign: "left" }}
             style={{ backgroundColor: "#12122c" }}
           >
-            <span style={{ textAlign: "start", color: "white" }}>
-              Time Deadline:
+            
+            <span style={{ textAlign: "start", color: "white", fontSize: "20px" }}>
+              Weight  <CurrencyBitcoin sx={{ color: "#fc8416", marginBottom: "-4px" }} />{" "}
             </span>
 
-            <div style={{ float: "right", display: "inline" }}>
-              <span style={{ textAlign: "right", color: "white" }}>
-                30sec 1min 2min custom
-              </span>
-            </div>
-
-            <hr></hr>
-          </Item>
-
-          <Item
-            sx={{ pl: 3, textAlign: "left" }}
-            style={{ backgroundColor: "#12122c" }}
-          >
-            <span style={{ textAlign: "start", color: "white" }}>
-              Price Impact:
-            </span>
-
-            <div style={{ float: "right", display: "inline" }}>
-              <span style={{ textAlign: "right", color: "white" }}>0%</span>
+            <div style={{ float: "right", display: "inline", fontSize: "20px" }}>
+              <span style={{ textAlign: "right", color: "#6d6d7d" }}>50%</span>
             </div>
 
             <div>
-              <span style={{ textAlign: "start", color: "white" }}>
-                Expected Output:
-              </span>
+            <span style={{ textAlign: "start", color: "white", fontSize: "20px" }}>
+              Weight  <CurrencyBitcoin sx={{ color: "#fc8416", marginBottom: "-4px" }} />{" "}
+            </span>
 
-              <div style={{ float: "right", display: "inline" }}>
-                <span style={{ textAlign: "right", color: "white" }}>0</span>
-              </div>
+            <div style={{ float: "right", display: "inline", fontSize: "20px" }}>
+              <span style={{ textAlign: "right", color: "#6d6d7d" }}>50%</span>
+            </div>
             </div>
 
+           
             <div>
-              <span style={{ textAlign: "start", color: "white" }}>
-                Minimum Output after Slippage:
-              </span>
+            <span style={{ textAlign: "start", color: "white", fontSize: "18px" }}>
+              Trading Fee:  <CurrencyBitcoin sx={{ color: "#fc8416", marginBottom: "-4px" }} />{" "}
+            </span>
 
-              <div style={{ float: "right", display: "inline" }}>
-                <span style={{ textAlign: "right", color: "white" }}>0</span>
-              </div>
+            <div style={{ float: "right", display: "inline", fontSize: "18px" }}>
+              <span style={{ textAlign: "right", color: "#6d6d7d" }}>0.1%</span>
+            </div>
             </div>
             <Button
               size="large"
@@ -344,21 +321,44 @@ export default function Home() {
                 textAlign: "center",
               }}
             >
-              SWAP
+              CREATE POOL
+            </Button>
+
+            <Button
+              size="large"
+              variant="contained"
+              sx={{ width: "100%", padding: 2, fontWeight: "bold", mt: 2, mb: 2 }}
+              style={{
+                background:
+                  "linear-gradient(to right bottom, #13a8ff, #0074f0)",
+                textAlign: "center",
+              }}
+            >
+              ADD LIQUIDITY
             </Button>
           </Item>
         </Grid>
 
         <Grid item xs={12} sm={12} md={7} sx={{ mt: 2 }}>
           <Item
-            sx={{ mb: 3 }}
-            style={{ backgroundColor: "#12122c", color: darkFontColor }}
+            sx={{ mb: 3, justifyContent: "flex-start" }}
+            style={{ backgroundColor: "transparent", color: "white" }}
           >
-              {/* <CreateSimpleSwitcher /> */}
-              <img src={graph} style={{ maxWidth: "100%" }} />
+            <div style={{textAlign: "left"}}>
+             <h1 style={{marginLeft:"18px"}}>Pool Creation Guide </h1>
+             <ol>
+                <li style={{fontSize: "19px"}}>
+                    Choose two token which have no existing liquidty Pool.
+                </li>
+                <li style={{fontSize: "19px"}}>
+                    Set the amount of each token you wish to add
+                </li>
+             </ol>
+
+             </div>
           </Item>
 
-          <History />
+         
         </Grid>
       </Grid>
     </div>

@@ -57,7 +57,7 @@ function Header() {
       <Grid
         container
         maxWidth="lg"
-        columnSpacing={{ xs: 0, sm: 0, md: 0 }}
+        columnSpacing={{ xs: 0, sm: 0, md: 0}}
         sx={{ pb: 1 }}
       >
         {/* Logo Grid */}
