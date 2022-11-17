@@ -96,7 +96,7 @@ export default function CLiquidity() {
     <div style={{ display: "flex", justifyContent: "center" }}>
       <Grid
         container
-        sx={{maxWidth:"lg"}}
+        sx={{maxWidth:"1220px"}}
         border={0}
         columnSpacing={{ xs: 0, sm: 0, md: 0, lg: 2 }}
       >
