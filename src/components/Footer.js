@@ -16,7 +16,7 @@ function Footer() {
   return (
     <div style={{ display: "flex", justifyContent: "center", marginTop: "30px", marginLeft: "15px" }}>
         <Grid container  sx={{maxWidth: "1205px",backgroundColor: backgroundColor}} spacing={2}>
-  <Grid item xs={4} md={4}>
+  <Grid item xs={12} md={4}>
     <Item  style={{ backgroundColor: "transparent"}}> <img
               src={logo}
               width="150px"
@@ -24,7 +24,7 @@ function Footer() {
               style={{ marginBottom: "1.1rem", marginTop: "-0.5rem" }}
             /></Item>
   </Grid>
-  <Grid item xs={4} md={4}>
+  <Grid item xs={8} md={4}>
   <Item  style={{ backgroundColor: "transparent", color: "white"}}  elevation={0}>
   &copy; 2022 All rights reserved
     </Item>

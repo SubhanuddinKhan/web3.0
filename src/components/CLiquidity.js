@@ -49,7 +49,7 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
     borderRadius: 4,
     position: "relative",
     backgroundColor: "#07071c",
-    border: "1px solid #ced4da",
+    border: "0px solid #ced4da",
     fontSize: 20,
     textAlign: "start",
     padding: "10px 16px 10px 12px",
@@ -71,8 +71,11 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
       borderRadius: 4,
       borderColor: "#80bdff",
       boxShadow: "0 0 0 0.2rem rgba(0,123,255,.25)",
-      color: "white",
+      color:"white"
     },
+  },
+  icon: {
+    color: "white",
   },
 }));
 
@@ -81,6 +84,7 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
 export default function CLiquidity() {
   const [darkFontColor, setDarkFontColor] = useState("#FFFFFF");
   const [darkFontColorSec, setDarkFontColorSec] = useState("#13a8ff");
+  const [grayColor,setGrayColor]=useState("#6d6d7d");
 
   // drop down js start
   const [age, setAge] = React.useState("0");
@@ -103,7 +107,7 @@ export default function CLiquidity() {
        <SwapCmp />
 
         <Grid item xs={12} sm={12} md={5} sx={{ mt: 2 }}>
-          <Item sx={{ pl: 3 }} style={{ backgroundColor: "#12122c" }}>
+        <Item sx={{ pl: 3, pr: 3,pb:2 }} style={{ backgroundColor: "#12122c" }}>
             <Typography
               variant="h5"
               sx={{ fontWeight: "600", color: "white" }}
@@ -115,136 +119,161 @@ export default function CLiquidity() {
 
             {/* Drop down Start  */}
 
-            <FormControl sx={{ m: 1 }} variant="standard">
-              <InputLabel
-                id="demo-customized-select-label"
-                style={{ fontWeight: "bold", color: "white" }}
-              >
-               
-              </InputLabel>
-
-              <Select
-                labelId="demo-customized-select-label"
-                id="demo-customized-select"
-                value={age}
-                onChange={handleChange}
-                input={<BootstrapInput />}
-              >
-                <MenuItem value={0}></MenuItem>
-
-                <MenuItem value={0}>
-                  {" "}
-                  <CurrencyBitcoin sx={{ color: "#fc8416", marginBottom: "-5px" }} />{" "}
-                  <span style={{ color: "#FFFFFF", display: "inline" }}>
-                    BTC
-                  </span>{" "}
-                </MenuItem>
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
-              </Select>
-              <span style={{ textAlign: "end", color: "white" }}>
-                Balance Connect wallet
-              </span>
-            </FormControl>
-
-            <FormControl sx={{ m: 1, ml: -1 }} variant="standard">
-              <InputLabel htmlFor="demo-customized-textbox"></InputLabel>
-              <BootstrapInput
-                id="demo-customized-textbox"
-                type="text"
-                value={0}
-                style={{ color: "#FFFFFF" }}
-              />
-              <span style={{ textAlign: "end", color: "white" }}>
-               
-              </span>
-            </FormControl>
-            {/* </FormControl> */}
-
-            {/* Drop down close */}
-
-          
-          </Item>
-
-          <Item sx={{ pl: 3, mt: -5 }} style={{ backgroundColor: "#12122c" }}>
-            {/* Drop down Start  */}
-
             <FormControl
-              sx={{ m: 1 }}
+              sx={{ m: 0 }}
+              style={{ alignItems: "flex-start", display: "inline" }}
               variant="standard"
-              style={{ textAlign: "start" }}
             >
-              <InputLabel
-                id="demo-customized-select-label"
-                style={{ fontWeight: "bold", color: "white" }}
+              <span
+                style={{
+                  color: "white",
+                  fontWeight: "500",
+                  fontSize: "16px",
+                  display: "block",
+                  textAlign: "left",
+                }}
               >
                 
-              </InputLabel>
-
-              <Select
-                labelId="demo-customized-select-label"
-                id="demo-customized-select"
-                value={age}
-                onChange={handleChange}
-                input={<BootstrapInput />}
-                style={{ textAlign: "start" }}
-              >
-                <MenuItem value={0} style={{ textAlign: "start" }}></MenuItem>
-
-                <MenuItem value={0} style={{ textAlign: "start" }}>
-                  {" "}
-                  <CurrencyBitcoin sx={{ color: "#fc8416", marginBottom: "-5px"  }} />{" "}
-                  <span style={{ color: "#FFFFFF", display: "inline" }}>
-                    BTC
-                  </span>{" "}
-                </MenuItem>
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
-              </Select>
-              <span style={{ textAlign: "end", color: "white" }}>
-                Balance Connect wallet
               </span>
-            
-            </FormControl>
 
-            <FormControl sx={{ m: 1, ml: -1 }} variant="standard">
-              <InputLabel htmlFor="demo-customized-textbox" ></InputLabel>
-              <BootstrapInput
-                id="demo-customized-textbox"
-                type="text"
-                value={0}
-                style={{ color: "#FFFFFF" }}
-              />
-              <span style={{ textAlign: "end", color: "white" }}></span>
+              <div style={{ backgroundColor: "#12122c" }}>
+                <Select
+                  labelId="demo-customized-select-label"
+                  id="demo-customized-select"
+                  value={age}
+                  onChange={handleChange}
+                  input={<BootstrapInput />}
+                  style={{ width: "35%", float: "left", border: "0px" }}
+                >
+                  <MenuItem value={0}></MenuItem>
+
+                  <MenuItem value={0}>
+                    {" "}
+                    <CurrencyBitcoin
+                      sx={{ color: "#fc8416", marginBottom: "-5px" }}
+                    />{" "}
+                    <span style={{ color: "#FFFFFF", display: "inline" }}>
+                      BTC
+                    </span>{" "}
+                  </MenuItem>
+                  <MenuItem value={10}>Ten</MenuItem>
+                  <MenuItem value={20}>Twenty</MenuItem>
+                  <MenuItem value={30}>Thirty</MenuItem>
+                </Select>
+                <BootstrapInput
+                  id="demo-customized-textbox"
+                  type="text"
+                  value={0}
+                  style={{
+                    color: "#FFFFFF",
+                    width: "65%",
+                    float: "left",
+                    borderLeft: "1px solid white",
+                    borderRadius: "14px",
+                    textAlign:"right"
+                  }}
+                />
+              </div>
+
+              <div style={{textAlign:"left"}}>
+                <span style={{  color: grayColor }}>
+                  Balance Connect wallet
+                </span>
+
+               
+              </div>
+            
             </FormControl>
             {/* </FormControl> */}
 
             {/* Drop down close */}
-          </Item>
+<br />
+           {/* Drop down Start  */}
 
- 
+           <FormControl
+              sx={{ m: 0 }}
+              style={{ alignItems: "flex-start", display: "inline" }}
+              variant="standard"
+            >
+              <span
+                style={{
+                  color: "white",
+                  fontWeight: "500",
+                  fontSize: "16px",
+                  display: "block",
+                  textAlign: "left",
+                }}
+              >
+                
+              </span>
 
-          <Item
-            sx={{ pl: 3, textAlign: "left" }}
-            style={{ backgroundColor: "#12122c" }}
-          >
+              <div style={{ backgroundColor: "#12122c" }}>
+                <Select
+                  labelId="demo-customized-select-label"
+                  id="demo-customized-select"
+                  value={age}
+                  onChange={handleChange}
+                  input={<BootstrapInput />}
+                  style={{ width: "35%", float: "left", border: "0px" }}
+                >
+                  <MenuItem value={0}></MenuItem>
+
+                  <MenuItem value={0}>
+                    {" "}
+                    <CurrencyBitcoin
+                      sx={{ color: "#fc8416", marginBottom: "-5px" }}
+                    />{" "}
+                    <span style={{ color: "#FFFFFF", display: "inline" }}>
+                      BTC
+                    </span>{" "}
+                  </MenuItem>
+                  <MenuItem value={10}>Ten</MenuItem>
+                  <MenuItem value={20}>Twenty</MenuItem>
+                  <MenuItem value={30}>Thirty</MenuItem>
+                </Select>
+                <BootstrapInput
+                  id="demo-customized-textbox"
+                  type="text"
+                  value={0}
+                  style={{
+                    color: "#FFFFFF",
+                    width: "65%",
+                    float: "left",
+                    borderLeft: "1px solid white",
+                    borderRadius: "14px",
+                  }}
+                />
+              </div>
+
+              <div style={{textAlign:"left"}}>
+                <span style={{  color: grayColor }}>
+                  Balance Connect wallet
+                </span>
+
+               
+              </div>
             
-            <span style={{ textAlign: "start", color: "white", fontSize: "20px" }}>
+            </FormControl>
+            {/* </FormControl> */}
+
+            {/* Drop down close */}
+
+  <div style={{textAlign:"left",marginTop:"27px"}}>
+            
+            <span style={{ textAlign: "start", color: "white", fontSize: "18px" }}>
               Weight  <CurrencyBitcoin sx={{ color: "#fc8416", marginBottom: "-4px" }} />{" "}
             </span>
 
-            <div style={{ float: "right", display: "inline", fontSize: "20px" }}>
+            <div style={{ float: "right", display: "inline", fontSize: "18px" }}>
               <span style={{ textAlign: "right", color: "#6d6d7d" }}>50%</span>
             </div>
 
             <div>
-            <span style={{ textAlign: "start", color: "white", fontSize: "20px" }}>
+            <span style={{ textAlign: "start", color: "white", fontSize: "18px" }}>
               Weight  <CurrencyBitcoin sx={{ color: "#fc8416", marginBottom: "-4px" }} />{" "}
             </span>
 
-            <div style={{ float: "right", display: "inline", fontSize: "20px" }}>
+            <div style={{ float: "right", display: "inline", fontSize: "18px" }}>
               <span style={{ textAlign: "right", color: "#6d6d7d" }}>50%</span>
             </div>
             </div>
@@ -284,6 +313,8 @@ export default function CLiquidity() {
             >
               ADD LIQUIDITY
             </Button>
+
+            </div>
           </Item>
         </Grid>
 

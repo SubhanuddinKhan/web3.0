@@ -16,6 +16,7 @@ import {
   RouterProvider,
   Route,
 } from "react-router-dom";
+import Slider from './components/Slider';
 
 
 
@@ -54,6 +55,7 @@ function App() {
       <RouterProvider router={router} />
      {/* <Test /> */}
     <Footer />
+    {/* <Slider /> */}
     {/* <h2>sdkfjslk</h2> */}
     </div>
   );
