@@ -10,53 +10,64 @@ import CLiquidity from './components/CLiquidity';
 import Liquidty from './components/Liquidty';
 import RLiquidity from './components/RLiquidity';
 
-import ReactDOM from "react-dom/client";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-} from "react-router-dom";
+import {BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
+
 import Slider from './components/Slider';
 
 
 
 function App() {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Home />,
-    },
-    {
-      path: "/Liquidity",
-      element: <Liquidty />,
-    },
-    {
-      path: "/RLiquidity",
-      element: <RLiquidity />,
-    },
-    {
-      path: "/CLiquidity",
-      element: <CLiquidity />,
-    },
+  // const router = createBrowserRouter([
+  //   {
+  //     path: "/",
+  //     element: <Home />,
+  //   },
+  //   {
+  //     path: "/Liquidity",
+  //     element: <Liquidty />,
+  //   },
+  //   {
+  //     path: "/RLiquidity",
+  //     element: <RLiquidity />,
+  //   },
+  //   {
+  //     path: "/CLiquidity",
+  //     element: <CLiquidity />,
+  //   },
     
-  ]);
+  // ]);
 
   const [bgColor,setBgColor]=useState("#07071c");
   
   return (
   
         <div className='Dark__Theme'>
-    {/* <ChartHome  /> */}
+
+          
+      <BrowserRouter>
       <Header />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Liquidty" element={<Liquidty />} />
+        <Route path="/CLiquidity" element={<CLiquidity />} />
+        <Route path="/RLiquidity" element={<RLiquidity />} />
+
+
+     </Routes>
+
+    {/* <ChartHome  /> */}
       {/* <Home /> */}
       {/* <CLiquidity /> */}
       {/* <Liquidty /> */}
       {/* <RLiquidity /> */}
-      <RouterProvider router={router} />
+      {/* <RouterProvider router={router} /> */}
      {/* <Test /> */}
     <Footer />
     {/* <Slider /> */}
     {/* <h2>sdkfjslk</h2> */}
+    </BrowserRouter>
+
     </div>
   );
 }

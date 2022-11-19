@@ -1,4 +1,4 @@
-import * as React from "react";
+import React,{useState} from "react";
 import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -13,7 +13,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import { Link } from "react-router-dom";
+import { Link, useParams, useLocation } from "react-router-dom";
 
 
 
@@ -23,7 +23,16 @@ const navItems = ["Home", "About", "Contact"];
 function Navigation(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [menuColor,setMenuColor] = React.useState("white");
+  const [menuColor,setMenuColor] = React.useState("#13a8ff");
+  const [active,setActive]=useState("home");
+
+  console.warn("active = ",active);
+
+  // const params = useParams();
+  // console.log("URL = ",params);
+  // console.log('current Pathname 👉️', window.location.pathname);
+  // console.log('pathname', location.pathname);
+
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -79,16 +88,53 @@ function Navigation(props) {
           </IconButton>
 
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map((item) => (
+            {/* {navItems.map((item) => ( */}
+            <Link to="/" style={{textDecoration:"none"}}>
               <Button
-                key={item}
-                sx={{ color: menuColor, pr: 5 }}
+                // key={item}
+                sx={{ color: active=="home"?menuColor:"white", pr: 5 }}
                 style={{ fontSize: 20, fontWeight: "600" }}
-                onClick={()=>setMenuColor("#13a8ff")}
+                onClick={()=>setActive("home")}
               >
-                {item}
+                {/* {item} */}
+                Home
               </Button>
-            ))}
+              </Link>
+              
+              <Button
+                // key={item}
+                sx={{ color: active=="about"?menuColor:"white", pr: 5 }}
+                style={{ fontSize: 20, fontWeight: "600" }}
+                onClick={()=>setActive("about")}
+                // {3==3?style={color:"red"}:""}
+              >
+                {/* {item} */}
+                About Us
+              </Button>
+
+
+              <Button
+                // key={item}
+                sx={{ color: active=="contact"?menuColor:"white", pr: 5 }}
+                style={{ fontSize: 20, fontWeight: "600" }}
+                onClick={()=>setActive("contact")}
+              >
+                {/* {item} */}
+                Contact Us
+              </Button>
+
+<Link to="/Liquidty" style={{textDecoration:"none"}}>
+              <Button
+                // key={item}
+                sx={{ color: active=="liquidty"?menuColor:"white", pr: 5 }}
+                style={{ fontSize: 20, fontWeight: "600" }}
+                onClick={()=>setActive("liquidty")}
+              >
+                {/* {item} */}
+                Liquidty
+              </Button>
+              </Link>
+            {/* ))} */}
           </Box>
         </Toolbar>
       </AppBar>

@@ -32,6 +32,7 @@ import {
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import graph from "../images/grap.JPG";
 import SwapCmp from "./SwapCmp";
+import { useLocation } from "react-router-dom";
 
 
 
@@ -99,7 +100,12 @@ export default function RLiquidity() {
 
   //   Dropdown js close
 
+  const nameUrl = window.location.href
 
+  // const location = useLocation();
+
+  // console.log('pathname', location.pathname);
+ 
 
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
@@ -122,7 +128,7 @@ export default function RLiquidity() {
               gutterBottom
               style={{ textAlign: "left" }}
             >
-              Remove Liquidity
+              Remove Liquidity 
             </Typography>
 
          {/* Drop down Start  */}
