@@ -13,6 +13,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import './Navigation.css'
 import { Link, useParams, useLocation } from "react-router-dom";
 
 
@@ -45,13 +46,48 @@ function Navigation(props) {
       </Typography>
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+       
+       <Link to="/" style={{textDecoration:"none", color:"black"}}>
+          <ListItem  disablePadding>
             <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+              <ListItemText primary={"Home"} />
             </ListItemButton>
           </ListItem>
-        ))}
+          </Link>
+
+      <Link to="#" style={{textDecoration:"none", color:"black"}}>
+          <ListItem  disablePadding>
+            <ListItemButton sx={{ textAlign: "center" }}>
+              <ListItemText primary={"About Us"} />
+            </ListItemButton>
+          </ListItem>
+          </Link>
+
+          <Link to="#" style={{textDecoration:"none", color:"black"}}>
+          <ListItem  disablePadding>
+            <ListItemButton sx={{ textAlign: "center" }}>
+              <ListItemText primary={"Contact Us"} />
+            </ListItemButton>
+          </ListItem>
+          </Link>
+
+          <Link to="/Liquidty" style={{textDecoration:"none", color:"black"}}>
+          <ListItem  disablePadding>
+            <ListItemButton sx={{ textAlign: "center" }}>
+              <ListItemText primary={"Liquidity"} />
+            </ListItemButton>
+          </ListItem>
+          </Link>
+
+          <Link to="/CLiquidty" style={{textDecoration:"none", color:"black"}}>
+          <ListItem  disablePadding>
+            <ListItemButton sx={{ textAlign: "center" }}>
+              <ListItemText primary={"Connect Wallet"} />
+            </ListItemButton>
+          </ListItem>
+          </Link>
+        
+      
       </List>
     </Box>
   );
@@ -60,14 +96,14 @@ function Navigation(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box
+   
+      <Box
       sx={{ display: "flex", alignItems: "flex-start", pt: 1, mb: 3, mt: 1 }}
-      style={{
-        width: "100%",
-        borderBottom: "1px solid white",
-        borderTop: "1px solid white",
-      }}
+    style={{width:"100%"}}
+      className="Menu__Mobile"
     >
+     
+    
       <AppBar
         component="nav"
         style={{ position: "relative" }}
@@ -75,6 +111,7 @@ function Navigation(props) {
           display: "flex",
           alignItems: "flex-start",
           backgroundColor: "transparent",
+          width:"100%"
         }}
       >
         <Toolbar>
@@ -138,6 +175,8 @@ function Navigation(props) {
           </Box>
         </Toolbar>
       </AppBar>
+
+      
       <Box component="nav">
         <Drawer
           container={container}
@@ -151,7 +190,7 @@ function Navigation(props) {
             display: { xs: "block", sm: "none" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
-              width: drawerWidth,
+              width: "100%",
             },
           }}
         >
@@ -162,6 +201,7 @@ function Navigation(props) {
         <Toolbar />
       </Box>
     </Box>
+    
   );
 }
 

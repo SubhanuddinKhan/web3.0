@@ -15,6 +15,7 @@ import {
   MenuItem,
   Tooltip,
   Avator,
+  Hidden,
 } from "@mui/material";
 import AdbIcon from "@mui/icons-material/Adb";
 import Avatar from "@mui/material/Avatar";
@@ -59,11 +60,12 @@ function Header() {
         maxWidth="lg"
         columnSpacing={{ xs: 0, sm: 0, md: 0}}
         sx={{ pb: 1 }}
+        className="header"
       >
         {/* Logo Grid */}
         <Grid
           item
-          xs={12}
+          xs={5}
           sm={12}
           md={6}
           lg={6}
@@ -85,16 +87,18 @@ function Header() {
         {/* Logo Right Side Grid  */}
         <Grid
           item
-          xs={12}
+          xs={5}
           md={6}
           lg={6}
           sx={{ display: "flex", justifyContent: "flex-end" }}
+          
         >
           <Item
             elevation={1}
             style={{ backgroundColor: "transparent", color: darkFontColor }}
           >
             <Stack spacing={2} direction="row">
+            <Hidden only="xs">
               <Button
                 size="large"
                 variant="outlined"
@@ -109,6 +113,7 @@ function Header() {
               >
                 Network
               </Button>
+              
               <Button
                 size="large"
                 color="primary"
@@ -121,14 +126,45 @@ function Header() {
               >
                 CONNECT WALLET
               </Button>
+              </Hidden>
+
+              <Hidden smUp="true">
+              <Button
+                size="large"
+                variant="outlined"
+                sx={{
+                  width: "100%",
+                  padding: 2,
+                  fontWeight: "bold",
+                  border: 2,
+                  color: darkFontColorSec,
+                }}
+                style={{ marginLeft: " 2px" }}
+              >
+                Network
+              </Button>
+              </Hidden>
             </Stack>
           </Item>
         </Grid>
+
+{/* Mobile menu  */}
+<Hidden smUp="true">
+        <Grid  item
+          xs={2}
+          md={6}
+          lg={6}
+          sx={{ display: "flex", justifyContent: "flex-end" }}>
+        <Navigation />
+       
+        </Grid>
+        </Hidden>  
         {/* Header Section 1 End  */}
 
-        {/* APP bar start  */}
-
+        {/* APP bar start  main menu*/}
+<Hidden smDown="true">
         <Navigation />
+        </Hidden>
         {/* App Bar closed */}
       </Grid>
     </div>
