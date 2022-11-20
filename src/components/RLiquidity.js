@@ -89,7 +89,9 @@ export default function RLiquidity() {
   const [darkFontColor, setDarkFontColor] = useState("#FFFFFF");
   const [darkFontColorSec, setDarkFontColorSec] = useState("#13a8ff");
   const [grayColor,setGrayColor]=useState("#6d6d7d");
-  const[setting,setSetting]=useState(false);
+  const [setting,setSetting]=useState(false);
+  const [swSlide,setSwSlide]=useState(true);
+
 
 
   // drop down js start
@@ -311,12 +313,12 @@ export default function RLiquidity() {
             
             </FormControl>
 
-
+{swSlide?
             <div style={{width:"100%",marginTop: "40px"}}>
      
      <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" />
      </div>
-
+:""}
             <div style={{ color: "white",display:"block",textAlign:"left", marginTop:"9px",marginBottom:"12px" }}>
                 <InfoOutlinedIcon
                   style={{
@@ -341,8 +343,8 @@ export default function RLiquidity() {
                 Add custom Proportion:
                 </span>
 
-                <span style={{ float: "right", color: grayColor, marginTop:"-7px", marginRight:"-7xpx",paddingRight:"0px"}}>
-               <Switch defaultChecked style={{paddingRight: "0px"}}/>
+                <span onClick={()=>setSwSlide(!swSlide)} style={{ float: "right", color: grayColor, marginTop:"-7px", marginRight:"-7xpx",paddingRight:"0px"}}>
+               <Switch  defaultChecked style={{paddingRight: "0px"}}/>
                 </span>
               </div>
               <br />

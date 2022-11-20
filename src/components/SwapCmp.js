@@ -1,4 +1,4 @@
-import { Button, Grid, Stack,Paper, styled } from '@mui/material'
+import { Button, Grid, Stack,Paper, styled, Hidden } from '@mui/material'
 import React, {useState} from 'react'
 import { Link, useLocation } from 'react-router-dom';
 
@@ -27,6 +27,8 @@ function SwapCmp() {
 
   return (
     <>
+    
+    <Hidden smDown="true">
           <Grid item xs={12} sm={12} md={9} lg={8} >
           <Item
             elevation={1}
@@ -95,9 +97,84 @@ function SwapCmp() {
             </Stack>
           </Item>
         </Grid>
+
+        </Hidden>
+
+<Hidden  smUp="true">
+        <Grid sx={{ overflowX: 'scroll' }} item xs={12} sm={12} md={9} lg={8} >
+          <Item
+            elevation={1}
+            style={{ backgroundColor: "transparent", color: darkFontColor }}
+          >
+            <Stack spacing={2} direction="row">
+           
+
+            <Link to="/Liquidty" style={{textDecoration:"none"}}>
+              <Button
+                size="large"
+              
+                variant="contained"
+                sx={{
+                  width: 200,
+                  padding: 2,
+                  fontWeight: "bold",
+                
+                  background:
+                  location.pathname=="/Liquidty"?activeSwapColor:"#12122c",
+              }}
+              onClick={()=>setActiveSwapColor("/Liquidty")}
+              >
+                Add Liquidity
+              </Button>
+              </Link>
+
+             
+
+              <Link to="/RLiquidity" style={{textDecoration:"none"}}>
+              <Button
+                size="large"
+              
+                variant="contained"
+                sx={{
+                  width: 200,
+                  padding: 2,
+                  fontWeight: "bold",
+                  
+                  background:
+                  location.pathname=="/RLiquidity"?activeSwapColor:"#12122c",
+              }}
+              onClick={()=>setActiveSwapColor("/RLiquidity")}
+              >
+                REMOVE LIQUIDTY
+              </Button>
+              </Link>
+
+              <Link to="/CLiquidity" style={{textDecoration:"none"}}>
+              <Button
+                size="large"
+                variant="contained"
+                sx={{ width: 200, padding: 2, fontWeight: "bold" }}
+                style={{
+                  background:
+                  location.pathname=="/CLiquidity"?activeSwapColor:"#12122c",
+                }}
+                onClick={()=>setActiveSwapColor("/CLiquidtiy")}
+
+              >
+                Pool Factory 
+              </Button>
+              </Link>
+
+             
+            </Stack>
+          </Item>
+        </Grid>
+        </Hidden>
+
         <Grid item xs={12} md={3} lg={4}>
           {/* <Item>xs=4</Item> */}
         </Grid> 
+        
     </>
   )
 }
