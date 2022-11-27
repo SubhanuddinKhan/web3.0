@@ -1,3 +1,47 @@
+# Screenshots
+
+Fully Responsive Gamut 3.0 React Application with all states working features.
+
+# Responsiveness
+
+![dashboard](https://user-images.githubusercontent.com/45516016/204136023-09325730-a929-490a-860f-eb0e81cf7108.png)
+![mobile](https://user-images.githubusercontent.com/45516016/204135966-0e1b7854-1c84-4af1-9730-9ae881a818a1.JPG)
+
+
+# Features
+
+### Active Menu
+
+![active menu](https://user-images.githubusercontent.com/45516016/204135781-00a27830-def8-4109-9542-656f14e65154.png)  
+
+### Active Category
+
+![active category active page](https://user-images.githubusercontent.com/45516016/204135799-aedafa70-4c8e-4402-8dc1-94606a55522b.png)
+
+
+
+## Dashboard
+
+![dashboard](https://user-images.githubusercontent.com/45516016/204136023-09325730-a929-490a-860f-eb0e81cf7108.png)
+
+
+## Add Liquidity
+
+![add liquidity](https://user-images.githubusercontent.com/45516016/204135458-edb1b1b5-bb0f-4369-902c-33328b98327e.png)
+
+## Remove Liquidity
+
+![Remove Liquidity](https://user-images.githubusercontent.com/45516016/204135473-79d6745c-afed-4aa0-a0df-de5ca1824d5a.png)
+
+## Pool Factory
+
+![Pool Factory](https://user-images.githubusercontent.com/45516016/204135489-02a777ba-48d7-4e9d-9a87-e2686a95f760.png)
+
+# Mobile View 
+
+![screencapture-localhost-3000-2022-11-19-03_36_30](https://user-images.githubusercontent.com/45516016/204135431-235481a4-8329-4b80-89ef-defc65776d15.png)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
